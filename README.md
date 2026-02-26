@@ -30,6 +30,12 @@ playwright-cdp-mcp
 
 This starts the MCP server over stdio (default FastMCP transport).
 
+If your user-local scripts directory is not on `PATH`, run:
+
+```bash
+python3 -m playwright_cdp_framework.server
+```
+
 ## MCP tools exposed
 
 - `launch_browser(headless=True, cdp_port=9222, channel=None)`
