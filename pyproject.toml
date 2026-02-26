@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "playwright-cdp-mcp"
+version = "0.1.0"
+description = "Persistent Playwright browser MCP server with CDP connectivity"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp",
+  "playwright",
+]
+
+[project.scripts]
+playwright-cdp-mcp = "playwright_cdp_framework.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["playwright_cdp_framework*"]
