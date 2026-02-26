@@ -47,6 +47,38 @@ python3 -m playwright_cdp_framework.server
 - `close_tab(tab_index=None)`
 - `close_browser()`
 - `browser_status()`
+- `wm_branding_theme()`
+
+Each tool returns a consistent payload:
+
+```json
+{
+  "ok": true,
+  "data": {},
+  "theme": {
+    "brand": "WM",
+    "primary": "#006B3F",
+    "secondary": "#8DC63F",
+    "accent": "#FFC72C",
+    "background": "#F5F8F5",
+    "text": "#1F2933"
+  }
+}
+```
+
+On failures, tools return:
+
+```json
+{
+  "ok": false,
+  "error": {
+    "action": "open_url",
+    "type": "BrowserSessionError",
+    "message": "No connected browser. Call launch_browser or connect_over_cdp first."
+  },
+  "theme": { "...": "..." }
+}
+```
 
 ## Example flow for an agent
 
